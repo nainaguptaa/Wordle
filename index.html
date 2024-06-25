@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Wordle</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    
+    
+
+
+    <div class="top_border">
+      <h1>Wordle</h1>
+      <div class="icons">
+        <p>
+          <button id="dark_button" type="button" style="border: none; font-size: large; position: relative;">
+            <span style="position: relative; z-index: 2;">&#9681;</span> 
+          </button>
+          <button id="hint" type="button" style="border: none;font-size: large; position: relative;">
+            <span style="position: relative; z-index: 2;">&#63;</span> 
+          </button>
+          <button id="info" type="button" style="border: none; font-size: large; position: relative;">
+            <span style="position: relative; z-index: 2;">&#9432;</span>
+          </button>
+        </p>
+      </div>
+    </div> 
+    
+    <style>
+      button::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        z-index: 1;
+      }
+      
+      button:hover::before {
+        background-color: #ccc;
+      }
+      
+      button:hover span {
+        color: white;
+      }
+    </style>
+    
+
+    <div id = "bottomBorder" class = "bottom_border">
+      <div id = "bottom" class = "bottom_text"><p1> © Naina Gupta 2023</p1></div>
+    </div>
+
+
+
+    <i class="dark" id="toggleDark"></i>
+
+    <div id="hintFooter" style="display: none;"> <p> Hint: </p></div>
+
+    <div id="myFlexbox">
+      <h2>How to Play</h2>
+      <ul>
+        <li>Start typing. The letters will appear in the boxes.</li>
+        <li>Remove letters with backspace</li>
+        <li>Hit Enter/Return to submit an answer.</li>
+        <li>Letters with green background are in the right spot.</li>
+        <li>Letters with yellow background exist in the word, but are in the wrong spots.</li>
+        <li>Letters with grey background do not exist in the word.</li>
+        <li>If you need a hint, click the &#63; icon.</li>
+      </ul>
+    </div>
+
+
+    <div id="winScreen"></div>
+
+
+
+    <button id = "restart" class="start_over" onclick = "Restart()" type="button">Start Over!</button>
+
+    <div id="myFlexbox" style="display: none;"></div>
+
+
+
+     <div id = "loserFooter" class = "loser"> <p> </p> </div>
+     <div id = "winnerFooter" class = "winner"> <p> </p> </div>
+
+    
+  <div id = "game">
+    <div class="grid">
+    </div>
+  </div>
+  </body>
+  <script src="./wordle.js"></script>
+
+</html>
